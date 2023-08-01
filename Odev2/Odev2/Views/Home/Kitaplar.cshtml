@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Kitaplar";
+    Layout = "~/Views/Shared/_LayoutPage1Home.cshtml";
+}
+
+<h2>Kitaplar Sayfası</h2>
+
+@foreach (var item in Model)
+{ /*burası home indexi*/
+    <div class="card float-start m-2">
+        <h5 class="card-header">@item.KitapAdi</h5>
+        <div class="card-body">
+            <h5 class="card-title">Fiyat: @item.SatisFiyati ₺</h5>
+            <p class="card-text">Kategori: @item.Kategori</p>
+            <p class="card-text">Yazar: @item.YazarAdi</p>
+
+            <a href="/Home/Index" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+}
+

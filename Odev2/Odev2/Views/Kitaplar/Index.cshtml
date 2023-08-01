@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Odev2.Models.Kitaplar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni Kitap Kaydedin", "Kaydetme")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KitapAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KitapSeriNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kategori)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YazarAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SatisFiyati)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StokDurum)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KitapAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KitapSeriNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategori)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YazarAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SatisFiyati)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StokDurum)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KitapID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KitapID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KitapID })
+        </td>
+    </tr>
+}
+
+</table>

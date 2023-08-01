@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="KullanicilarSet" EntityType="Model1.Kullanicilar" />
+    <EntitySet Name="KitaplarSet" EntityType="Model1.Kitaplar" />
+  </EntityContainer>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdi" Type="String" Nullable="false" />
+    <Property Name="Sifre" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kitaplar">
+    <Key>
+      <PropertyRef Name="KitapID" />
+    </Key>
+    <Property Name="KitapID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KitapAdi" Type="String" Nullable="false" />
+    <Property Name="KitapSeriNo" Type="String" Nullable="false" />
+    <Property Name="Kategori" Type="String" Nullable="false" />
+    <Property Name="YazarAdi" Type="String" Nullable="false" />
+    <Property Name="SatisFiyati" Type="Int32" Nullable="false" />
+    <Property Name="StokDurum" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>
